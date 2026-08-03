@@ -1,0 +1,62 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STELLANTIS | Heavy Duty Vehicle Traceability & Diagnostics</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard filters">
+        <div class="brand-block">
+          <img src="assets/images/stellantis.png" alt="Stellantis" class="brand-logo" />
+          <div><p class="eyebrow">Manufacturing IT</p><h1>STELLANTIS</h1></div>
+        </div>
+        <section class="filter-panel">
+          <div class="section-heading"><i data-lucide="sliders-horizontal" aria-hidden="true"></i><h2>Filters</h2></div>
+          <label class="field"><span>VIN search</span><div class="input-icon"><i data-lucide="search" aria-hidden="true"></i><input type="search" value="3C6UR5FL5RG123456" aria-label="VIN search" /></div></label>
+          <fieldset><legend>Vehicle program</legend><label><input type="checkbox" checked /> DJ</label><label><input type="checkbox" checked /> DD</label><label><input type="checkbox" /> D2</label></fieldset>
+          <label class="field"><span>Vehicle</span><select><option>RAM 2500</option><option>RAM 3500</option></select></label>
+          <label class="field"><span>Assembly plant</span><select><option>Saltillo Truck Assembly</option></select></label>
+          <fieldset><legend>Assembly stage</legend><label><input type="checkbox" checked /> Receiving</label><label><input type="checkbox" checked /> Final Configuration</label><label><input type="checkbox" checked /> ADAS</label><label><input type="checkbox" checked /> Roll Test</label><label><input type="checkbox" /> Dynamic Road Test</label></fieldset>
+          <fieldset><legend>Fault status</legend><label><input type="radio" name="faultStatus" checked /> Active</label><label><input type="radio" name="faultStatus" /> Historical</label></fieldset>
+          <fieldset><legend>Severity</legend><label><input type="checkbox" /> Low</label><label><input type="checkbox" checked /> Medium</label><label><input type="checkbox" checked /> High</label></fieldset>
+          <div class="sidebar-actions"><button class="btn primary" type="button"><i data-lucide="filter" aria-hidden="true"></i>Apply Filters</button><button class="btn secondary" type="button"><i data-lucide="download" aria-hidden="true"></i>Export Report</button></div>
+        </section>
+      </aside>
+      <main class="workspace">
+        <header class="topbar">
+          <div><p class="eyebrow">Heavy Duty Vehicle Traceability & Diagnostics</p><h2>Industrial QR Vehicle Monitoring System</h2></div>
+          <div class="header-meta" aria-label="Current dashboard context"><div><span>Time</span><strong id="currentTime">--:--:--</strong></div><div><span>Date</span><strong id="currentDate">--</strong></div><div><span>Plant</span><strong>Saltillo Truck Assembly</strong></div><div><span>User</span><strong>E. Martinez</strong></div><div><span>Shift</span><strong>B Shift</strong></div></div>
+        </header>
+        <section class="kpi-grid" aria-label="Diagnostic KPIs">
+          <article class="kpi-card"><div class="kpi-icon danger"><i data-lucide="triangle-alert" aria-hidden="true"></i></div><div class="kpi-copy"><span>Current Active DTCs</span><strong>18</strong><small class="trend down">-12% vs prior shift</small></div><canvas class="sparkline" data-values="15,19,21,18,22,20,18" aria-label="Current active DTC trend"></canvas></article>
+          <article class="kpi-card"><div class="kpi-icon warning"><i data-lucide="history" aria-hidden="true"></i></div><div class="kpi-copy"><span>Historical DTCs</span><strong>142</strong><small class="trend up">+8% rolling 7 days</small></div><canvas class="sparkline" data-values="118,126,124,131,136,139,142" aria-label="Historical DTC trend"></canvas></article>
+          <article class="kpi-card"><div class="kpi-icon blue"><i data-lucide="truck" aria-hidden="true"></i></div><div class="kpi-copy"><span>Vehicles Affected</span><strong>6</strong><small class="trend down">-3 from yesterday</small></div><canvas class="sparkline" data-values="10,9,8,8,7,7,6" aria-label="Vehicles affected trend"></canvas></article>
+          <article class="kpi-card"><div class="kpi-icon success"><i data-lucide="timer" aria-hidden="true"></i></div><div class="kpi-copy"><span>Average Detection Time</span><strong>0.42 s</strong><small class="trend down">0.08 s faster</small></div><canvas class="sparkline" data-values="0.61,0.57,0.51,0.48,0.46,0.44,0.42" aria-label="Average detection time trend"></canvas></article>
+          <article class="kpi-card"><div class="kpi-icon success"><i data-lucide="qr-code" aria-hidden="true"></i></div><div class="kpi-copy"><span>QR Scan Success</span><strong>99.8%</strong><small class="trend up">+0.4 pts vs target</small></div><canvas class="sparkline" data-values="98.9,99.1,99.3,99.5,99.4,99.7,99.8" aria-label="QR scan success trend"></canvas></article>
+        </section>
+        <section class="dashboard-grid">
+          <article class="panel vehicle-panel"><div class="panel-heading"><div><p class="eyebrow">Current vehicle</p><h3>3C6UR5FL5RG123456</h3></div><span class="status-pill verified"><i data-lucide="badge-check" aria-hidden="true"></i>VERIFIED</span></div><div class="vehicle-content"><div class="vehicle-image-frame"><img src="assets/images/ram2500.png" alt="RAM Heavy Duty 2500" /></div><dl class="vehicle-facts"><div><dt>Vehicle program</dt><dd>DJ</dd></div><div><dt>Model</dt><dd>RAM Heavy Duty 2500</dd></div><div><dt>Assembly plant</dt><dd>Saltillo Truck Assembly</dd></div><div><dt>Assembly line</dt><dd>Line 2</dd></div><div><dt>Mileage</dt><dd>18 km</dd></div><div><dt>Supplier</dt><dd>Mopar</dd></div><div><dt>Current station</dt><dd>Roll Test</dd></div><div><dt>Vehicle status</dt><dd>Verified for release</dd></div></dl></div></article>
+          <article class="panel dtc-panel"><div class="panel-heading"><div><p class="eyebrow">Current DTC</p><h3>P20EE</h3></div><span class="status-pill active">ACTIVE</span></div><p class="dtc-description">SCR NOx Catalyst Efficiency Below Threshold</p><dl class="dtc-grid"><div><dt>Severity</dt><dd class="severity-high">HIGH</dd></div><div><dt>Detected during</dt><dd>Roll Test</dd></div><div><dt>Detected by</dt><dd>Final Vehicle Diagnostics</dd></div><div><dt>Recovery time</dt><dd>0.42 s</dd></div></dl></article>
+          <article class="panel timeline-panel"><div class="panel-heading"><div><p class="eyebrow">Traceability timeline</p><h3>Assembly verification path</h3></div></div><ol class="timeline"><li><i data-lucide="check" aria-hidden="true"></i><span>Receiving</span></li><li><i data-lucide="check" aria-hidden="true"></i><span>Final Configuration</span></li><li><i data-lucide="check" aria-hidden="true"></i><span>ADAS</span></li><li><i data-lucide="check" aria-hidden="true"></i><span>Roll Test</span></li><li><i data-lucide="check" aria-hidden="true"></i><span>Verified</span></li></ol></article>
+          <article class="panel impact-panel"><div class="panel-heading"><div><p class="eyebrow">Fleet impact</p><h3>Diagnostic disposition</h3></div></div><div class="impact-list"><div><span>Vehicles with Active DTC</span><strong>6</strong></div><div><span>Historical Vehicles</span><strong>32</strong></div><div><span>Resolved Vehicles</span><strong>94</strong></div></div></article>
+          <article class="panel gauge-panel"><div class="panel-heading"><div><p class="eyebrow">QR integrity</p><h3>Recovered successfully</h3></div><strong class="gauge-value">100%</strong></div><div class="chart-frame gauge-frame"><canvas id="qrGauge" aria-label="QR integrity gauge showing 100 percent recovered successfully"></canvas></div></article>
+          <article class="panel chart-panel dtc-chart"><div class="panel-heading"><div><p class="eyebrow">Diagnostic concentration</p><h3>Top Diagnostic Trouble Codes</h3></div></div><div class="chart-frame"><canvas id="dtcChart" aria-label="Top diagnostic trouble codes horizontal bar chart"></canvas></div></article>
+          <article class="panel chart-panel program-chart"><div class="panel-heading"><div><p class="eyebrow">Vehicle mix</p><h3>Vehicles by Program</h3></div></div><div class="chart-frame"><canvas id="programChart" aria-label="Vehicles by program doughnut chart"></canvas></div></article>
+          <article class="panel chart-panel stage-chart"><div class="panel-heading"><div><p class="eyebrow">Detection stage</p><h3>Fault discovery by station</h3></div></div><div class="chart-frame"><canvas id="stageChart" aria-label="Detection stage vertical bar chart"></canvas></div></article>
+          <article class="panel image-panel"><div class="panel-heading"><div><p class="eyebrow">Current production area</p><h3>Saltillo Truck Assembly</h3></div></div><figure><img src="assets/images/assembly-line.jpg" alt="Assembly line production area" /><figcaption>Current Production Area</figcaption></figure></article>
+          <article class="panel qr-panel"><div class="panel-heading"><div><p class="eyebrow">Decoded Vehicle QR</p><h3>Vehicle ID STLA-DJ-123456</h3></div></div><div class="qr-content"><img src="assets/images/qr.png" alt="Decoded vehicle QR" /><dl><div><dt>Vehicle ID</dt><dd>STLA-DJ-123456</dd></div><div><dt>VIN</dt><dd>3C6UR5FL5RG123456</dd></div><div><dt>Build date</dt><dd>2026-08-02</dd></div><div><dt>Supplier</dt><dd>Mopar</dd></div></dl></div></article>
+          <article class="panel table-panel"><div class="panel-heading"><div><p class="eyebrow">Recent Vehicles</p><h3>Diagnostic scan history</h3></div></div><div class="table-wrap"><table><thead><tr><th>VIN</th><th>Vehicle</th><th>Program</th><th>DTC</th><th>Station</th><th>Severity</th><th>Status</th><th>Mileage</th></tr></thead><tbody id="vehicleTable"></tbody></table></div></article>
+        </section>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
